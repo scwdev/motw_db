@@ -1,1 +1,2 @@
-# Database and Backend for Monster of the Week Hunter Creator
+# Monster of the Week DB
+### Relational Database for MotW Character Generator
