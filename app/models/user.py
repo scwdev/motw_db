@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Date
+from sqlalchemy import Boolean, Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
 from app.database import Base, ID_and_Timestamps
@@ -16,9 +16,10 @@ class User(Base, ID_and_Timestamps):
     is_active = Column(Boolean, default=True)
 
     groups = relationship("Group", back_populates="user") # many-to-many
-    hunters = relationship("Hunter", back_populates="user") # many-to-one
+    hunters = relationship("Hunter") # many-to-one
     custom_moves = relationship("Move", back_populates="user") # many-to-one
     custom_gear = relationship("Gear", back_populates="user") # many-to-one
+
 
 
 
