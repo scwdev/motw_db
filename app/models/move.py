@@ -18,11 +18,16 @@ class Move(Base, ID_and_Timestamps):
     name: Column(String, nullable=False)
     description_short: Column(Text)
     description_long: Column(Text)
-    
-    choices_num: Column(Integer, default=0)
-    choices_list: Column(Text, nullable=True)
+    has_options: Column(Boolean)
+    options: relationship('MoveOption')
+    option_choices: Column(Integer, nullable=True)
+    option_choice_bases: Column(Integer, nullable=True)
     
     
 class MoveOption(Base, ID_and_Timestamps):
     __tablename__ = 'move_options'
+    
+    move_id = Column(Integer, ForeignKey('moves.id'))
+    
+    
     
