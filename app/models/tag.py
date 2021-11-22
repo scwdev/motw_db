@@ -9,3 +9,10 @@ class Tag(Base, ID_and_Timestamps):
       
     name: Column(String, nullable=False)
     description: Column(String, nullable=False)
+    
+    
+    def __init__(self,input): 
+        pass   
+        
+    def __repr__(self):
+        pass

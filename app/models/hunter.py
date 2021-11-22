@@ -33,3 +33,11 @@ class Hunter(Base, ID_and_Timestamps):
     history = Column(Text)
     notes = Column(Text)
     
+    
+    def __init__(self,input): 
+        pass   
+        
+    def __repr__(self):
+        pass
+
+    

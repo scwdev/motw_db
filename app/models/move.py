@@ -24,6 +24,14 @@ class Move(Base, ID_and_Timestamps):
     option_choice_bases: Column(Integer, nullable=True)
     
     
+    def __init__(self,input): 
+        pass   
+        
+    def __repr__(self):
+        pass
+
+    
+    
 class MoveOption(Base, ID_and_Timestamps):
     __tablename__ = 'move_options'
     

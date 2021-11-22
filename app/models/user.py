@@ -9,29 +9,24 @@ class User(Base, ID_and_Timestamps):
 
     email = Column(String, unique=True, index=True)
     username = Column(String, unique=True, index=True)
-    public = Column(Boolean, index=True)
+    public = Column(Boolean, default=True, index=True)
     
     # TODO read about security
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
 
     groups = relationship("Group", back_populates="user") # many-to-many
-    hunters = relationship("Hunter") # many-to-one
-    custom_moves = relationship("Move", back_populates="user") # many-to-one
-    custom_gear = relationship("Gear", back_populates="user") # many-to-one
+    hunters = relationship("Hunter") # one-to-many
+    custom_moves = relationship("Move", back_populates="user") # one-to-many
+    custom_gear = relationship("Gear", back_populates="user") # one-to-many
 
-
-
-
-    # items = relationship("Item", back_populates="owner")
-
-
-# class Item(Base):
-#     __tablename__ = "items"
-
-#     id = Column(Integer, primary_key=True, index=True)
-#     title = Column(String, index=True)
-#     description = Column(String, index=True)
-#     owner_id = Column(Integer, ForeignKey("users.id"))
-
-#     owner = relationship("User", back_populates="items")
+    def __init__(self, input):
+        email = input['email']
+        username = input['username']
+        hashed_password = input['hashed_password']
+        
+    
+        
+    def __repr__(self):
+        print(f"primary key (id): {self.id}, username: {self.username}, email: {self.email}")
+        
