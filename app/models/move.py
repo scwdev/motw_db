@@ -37,5 +37,9 @@ class MoveOption(Base, ID_and_Timestamps):
     
     move_id = Column(Integer, ForeignKey('moves.id'))
     
-    
-    
+        
+    def __init__(self,input): 
+        pass   
+        
+    def __repr__(self):
+        pass
