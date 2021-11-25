@@ -11,7 +11,7 @@ class Playbook(Base):
     name: Column(String, nullable=False)
     description: Column(String)
     luck_special: Column(String)
-    
+     
     
     # appearance: relationship()
     # history: relationship()
