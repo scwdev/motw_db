@@ -12,6 +12,7 @@ class Playbook(Base):
     description: Column(String)
     luck_special: Column(String)
      
+    # ratings: relationship()
     
     # appearance: relationship()
     # history: relationship()
