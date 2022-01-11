@@ -9,9 +9,10 @@ from .association_tables import hunters_to_moves, hunters_to_gear
 class Playbook(Base):
     
     name: Column(String, nullable=False)
-    description: Column(String)
-    luck_special: Column(String)
-     
+    description: Column(String, nullable=False)
+    luck_special: Column(String, nullable=False)
+    source: Column(String, nullable=False)
+    
     # ratings: relationship()
     
     # appearance: relationship()
